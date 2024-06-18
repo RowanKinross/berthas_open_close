@@ -107,32 +107,33 @@ const Checklist = () => {
   };
 
 
-  const copyYesterdayItems = () => {
-    const yesterday = getYesterdayDateString(currentDate);
-    const yesterdayItems = openChecklists[yesterday] || [];
-    const todayItems = openChecklists[currentDate] || [];
-  
+  const copyItemsToToday = () => {
+    const selectedItems = openChecklists[currentDate] || [];
+    const todayItems = openChecklists[getTodayDateString()] || [];
+
     // Create a map to keep track of existing item texts in today's list
     const todayItemTexts = new Set(todayItems.map(item => item.text));
-  
-    // Filter out items from yesterday that have the same text as items in today's list
-    const newItemsFromYesterday = yesterdayItems.filter(item => !todayItemTexts.has(item.text));
-  
-    // Merge today's items with filtered items from yesterday
+
+    // Filter out items from selected date that have the same text as items in today's list
+    const newItemsFromSelectedDate = selectedItems.filter(item => !todayItemTexts.has(item.text));
+
+    // Merge today's items with filtered items from selected date
     const updatedChecklists = {
       ...openChecklists,
-      [currentDate]: [
+      [getTodayDateString()]: [
         ...todayItems,
-        ...newItemsFromYesterday.map(item => ({
+        ...newItemsFromSelectedDate.map(item => ({
           ...item,
           complete: false
         }))
       ]
     };
-  
+
     setOpenChecklists(updatedChecklists);
+    setCurrentDate(getTodayDateString());
   };
 
+  
   // Function to switch between open and closed checklists
   const switchTab = (tab) => {
     setActiveTab(tab);
@@ -203,7 +204,7 @@ const Checklist = () => {
             )}
           </div>
         ))}
-      <button onClick={copyYesterdayItems}>Copy Yesterday's List</button>
+      <button onClick={copyItemsToToday}>Copy items to today</button>
       </div>
       <button className='button' onClick={() => setDeleteMode(!deleteMode)}>
         {deleteMode ? 'Exit Delete Mode' : 'Delete Items'}
