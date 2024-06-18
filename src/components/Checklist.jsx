@@ -174,7 +174,11 @@ const Checklist = () => {
         ) : (
           <button onClick={() => handleDateChange('next')}>→</button>
         )}
+      {!isCopyToTodayHidden? (
         <button onClick={() => setCurrentDate(getTodayDateString())}>Today</button>
+      ):(
+        <button disabled>Today</button>
+      )}
       </div>
       <div className="input-group">
         <input

@@ -2,6 +2,7 @@
 :root {
   --pale: #fdfdfd;
   --dark: #1a1a1a;
+  --grey: rgb(224, 224, 224);
   --bertha: #eee510;
 }
 
@@ -66,9 +67,10 @@
   cursor: pointer;
 }
 
-.date-navigation button:disabled {
+button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  color: var(--grey);
 }
 
 .input-group {
