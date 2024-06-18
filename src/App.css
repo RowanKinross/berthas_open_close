@@ -1,0 +1,131 @@
+/* App-wide styles */
+:root {
+  --pale: #fdfdfd;
+  --dark: #1a1a1a;
+  --bertha: #eee510;
+}
+
+.logo {
+  width: 100px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.body {
+  padding: 30px;
+}
+
+.tab-navigation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+.tab-navigation button {
+  margin-right: 10px;
+  background-color: var(--pale);
+  color: var(--dark);
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.tab-navigation button.active {
+  background-color: var(--bertha);
+  color: var(--dark);
+}
+
+.checklist {
+  margin: auto;
+  padding: 5px;
+  max-width: 900px;
+  background-color: var(--pale);
+  color: var(--dark);
+}
+
+.date-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5%;
+}
+
+.date-navigation p {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.date-navigation button {
+  background-color: var(--pale);
+  color: var(--dark);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.date-navigation button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.input-group {
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.input-group input[type="text"] {
+  flex-grow: 1;
+  margin-right: 0.5em;
+  padding: 8px;
+  border: 1px solid var(--grey);
+  border-radius: 5px;
+}
+
+.input-group button {
+  background-color: var(--bertha);
+  color: var(--dark);
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.checklist-item input[type="text"] {
+  flex-grow: 1;
+  margin-right: 0.5em;
+  padding: 8px;
+  border: 1px solid var(--grey);
+  border-radius: 5px;
+}
+
+.checklist-item button {
+  margin-left: 0.5em;
+  background-color: var(--bertha);
+  color: var(--dark);
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.checklist-item.complete input[type="text"] {
+  background-color: lightgreen;
+  text-decoration: line-through;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  margin-top: 10px;
+}
