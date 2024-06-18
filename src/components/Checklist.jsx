@@ -139,6 +139,8 @@ const Checklist = () => {
     setActiveTab(tab);
   };
 
+  const isCopyToTodayHidden = currentDate === getTodayDateString();
+
   // Sort items based on completeness for display in the active checklist
   const sortedItems = activeTab === 'open'
   ? (openChecklists[currentDate] || []).sort((a, b) => {
@@ -204,7 +206,9 @@ const Checklist = () => {
             )}
           </div>
         ))}
-      <button onClick={copyItemsToToday}>Copy items to today</button>
+      {!isCopyToTodayHidden && (
+        <button onClick={copyItemsToToday}>Copy items to today</button>
+      )}
       </div>
       <button className='button' onClick={() => setDeleteMode(!deleteMode)}>
         {deleteMode ? 'Exit Delete Mode' : 'Delete Items'}
