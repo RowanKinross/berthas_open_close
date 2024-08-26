@@ -3,7 +3,7 @@
   --pale: #fdfdfd;
   --dark: #1a1a1a;
   --grey: rgb(224, 224, 224);
-  --bertha: #eee510;
+  --green: #006A4E;
 }
 
 .logo {
@@ -35,8 +35,8 @@
 }
 
 .tab-navigation button.active {
-  background-color: var(--bertha);
-  color: var(--dark);
+  background-color: var(--green);
+  color: var(--pale);
 }
 
 .checklist {
@@ -88,8 +88,8 @@ button:disabled {
 }
 
 .input-group button {
-  background-color: var(--bertha);
-  color: var(--dark);
+  background-color: var(--green);
+  color: var(--pale);
   border: none;
   padding: 8px 16px;
   cursor: pointer;
@@ -111,7 +111,7 @@ button:disabled {
 
 .checklist-item button {
   margin-left: 0.5em;
-  background-color: var(--bertha);
+  background-color: var(--green);
   color: var(--dark);
   border: none;
   padding: 8px 16px;

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
-import logo from '/berthas-logo-updated-2.png';
 
 const Checklist = () => {
   const [openChecklists, setOpenChecklists] = useState(() => {
@@ -162,7 +161,6 @@ const Checklist = () => {
         <button className={activeTab === 'open' ? 'active' : ''} onClick={() => switchTab('open')}>Open</button>
         <button className={activeTab === 'close' ? 'active' : ''} onClick={() => switchTab('close')}>Close</button>
         </div>
-        <img src={logo} className="logo berthasLogo" alt="Bertha's Logo" />
       </div>
       <div className='checklist'>
       <h1>{activeTab === 'open'? "Opening" : "Closing"} Kitchen List</h1>
